@@ -1,0 +1,94 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<script>Math.random = function() { return 0 }</script>
+
+
+
+	 </head>
+	 
+		<script type="text/javascript">
+			function changePage(param) {
+				changePage2(param);
+				window.history.pushState(param, "page " + param, "HistoryAPI.html?page=" + param);
+			}
+			
+			function changePage2(param) {
+				console.log(param);
+				jQuery("#page1").hide();
+				jQuery("#page2").hide();
+				jQuery("#page" + param).show();
+			}
+			
+			window.onpopstate = function(event) {
+				console.log("onpopstate");
+				console.log(event);
+				changePage2(event.state);
+			};
+			
+			jQuery(document).ready(function() {
+				var regex = /page=(\d+)/;
+				var result = regex.exec(location.search);
+				changePage2(result[1]);
+			});
+			
+		</script>
+		<script>var maxim = "shiran" + Math.random();</script>
+	</head> 
+
+	<body>
+		<div>
+			<button id="bt1" onclick="changePage(1);">Show 1</button>
+			<button id="bt2" onclick="changePage(2);">Show 2</button>
+		</div>
+		<div id="page1">
+			page1
+			<div class="myClass">
+				common
+			</div>
+			<div id="myDiv1">
+				div1
+			</div>
+			<div>
+				<input id="myInput1">
+			</div>
+			<div>
+				<img  id="myImage1" src="http://firefang.net/blog/wp-content/uploads/2006/10/goat_1.jpg">
+				<br>
+				<a id="link" href="http://qa.make-tutorial.com/SinglePageApp/HistoryAPI2.html">Click to move to the copy</a>
+			</div>
+		</div>
+
+<!--<p>Cross Domain</p>  
+				<br><br><br><br>
+				<iframe id="cdiframe"  src="http://qa.walkmeqa.com/Lihi/embed.html" style="width: 600px; height: 600px;"></iframe> --> 
+
+
+
+<!--<p>Same Domain</p>  -->
+				<br><br> <br><br>  
+			
+
+		<div id="page2" style="display:none">
+			page2
+			<div class="myClass">
+				common
+			</div>
+			<div id="myDiv2">
+				div2
+			</div>
+			<div>
+				<input id="myInput2">
+			</div>
+			<div>
+				<img  id="myImage2" src="http://www.rarebreeds.co.nz/cheviot1.jpg">
+			</div>
+		</div>
+		
+	</body>
+</html>
