@@ -1,0 +1,84 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script>
+		//var galit=1;
+			window.cactus = function(){
+				wmjQuery("#Togemon").toggle();
+				window.l1=2;
+			}
+			window.hashPage = function(i, j) {
+				location.hash='page'+i;
+				document.getElementById('page' + i).style.display="block";
+				document.getElementById('page' + j).style.display="none";
+				if (i=2){
+					$("#toggle").toggle();
+				}
+
+			}
+			jQuery(document).ready(function() {
+				var id = location.hash.substr(5);
+				if (id == "2") {
+					window.hashPage(2, 1);
+				}	
+			});
+
+		
+		</script>
+	</head>
+	<body>
+		<script>var widget=1;</script>
+		<button id="button1" onclick="hashPage(1, 2)">page1</button>
+		<button id="button2" onclick="hashPage(2, 1)">page2</button>
+		<script>var hash=2;
+</script>
+		<a id="link" href="http://qa.make-tutorial.com/SinglePageApp/Hashtag2.html">Click to move to the copy</a>
+		<div class="page" id="page1">
+			<p>Page 1</p>
+			<img src="http://dma.wtw-x.net/DMA/DigimonStands/Toei/HQ/Greymon.jpg" height="300" id="Greymon">
+		</div>
+		<div class="page" id="page2" style="display:none">
+			<p>Page 2</p>
+			<img src="http://img1.wikia.nocookie.net/__cb20110821072538/digimon/images/0/0c/Togemon_t.gif" height="300" id="Togemon" ><br>
+			<br>
+
+		</div>
+
+	</div>
+		<h3 id ="num1">555-555-5555</h3>   
+		<h3 id ="num2" style="display:none;">1</h3>
+	</div>
+
+					<div>
+						<button class ="btn1" onclick='wmjQuery("#num1").toggle()'>number 1 Toggle</button>
+						<button class ="btn1" onclick='wmjQuery("#num2").toggle()'>number 2 Toggle</button>
+					</div>
+		<button id ="toggle" style="display:none" onclick='cactus()'>Toggle the Cactus and Set Var</button></div>
+
+
+
+<div class='removableContent' style='display:inline-block;'>
+	<input type="button" style="background-color:Yellow;width:200px;height:100px;" value="I can be removed from HTML" id="yellowButton1"></input>
+</div>
+<input type='button' style='width:200px;height:30px;display:inline-block;' value='html toggle the yellow button!' onclick='htmlToggle()'></input>
+
+<script type="text/javascript">
+var yellowButtonContent = '<input type="button" style="background-color:Yellow;width:200px;height:100px;" value="I can be removed from HTML" id="yellowButton1"></input>';
+function htmlToggle() {
+console.log(document.getElementsByClassName("removableContent")[0].innerHTML);
+console.log(yellowButtonContent);
+	if(document.getElementsByClassName("removableContent")[0].innerHTML.length>0) {
+	console.log("inside if");
+		document.getElementsByClassName("removableContent")[0].innerHTML = "";
+	} else {
+	console.log("inside else");
+		document.getElementsByClassName("removableContent")[0].innerHTML = yellowButtonContent;
+	}
+}
+</script>
+
+	</body>
+</html>
